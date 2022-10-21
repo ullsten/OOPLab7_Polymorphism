@@ -3,21 +3,25 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Drawing circle = new Circle();
-            Drawing square = new Square();
-            Drawing rectangle = new Rectangle();
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("-------------------------");
-            Console.WriteLine("Some basic calculations");
-            Console.WriteLine("-------------------------");
+        { 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("|| Area calculations ||");
             Console.ResetColor();
-            circle.PrintInfo();
             Console.WriteLine();
-            rectangle.PrintInfo();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Geometry circle = new Circle();
+            Geometry square = new Square();
+            Geometry rectangle = new Rectangle();
+            Geometry Parallelogram = new Parallelogram(); 
+            Geometry ellipse = new Ellipse();
+            Menu menu = new Menu();
+
             Console.WriteLine();
-            square.PrintInfo();
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("Press enter to make your own calculations");
+            Console.ReadKey();
+            menu.InputFromUserShape(); //Menu for the program
+            Console.ReadKey();
         }
     }
 }

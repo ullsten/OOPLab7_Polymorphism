@@ -7,39 +7,37 @@ using System.Threading.Tasks;
 
 namespace Polymophism_test
 {
-    public class Circle : Drawing
+    public class Circle : Geometry
     {
-        protected double Area { get; set; }
+        protected double Area { get; set; } 
         protected double Perimeter { get; set;}
-        protected double radius { get; set; }
-        protected float Volume { get; set; }
-        public Circle()
+        protected double Radius { get; set; }
+        protected double VolumeSphere { get; set; }
+        public Circle(double radius = 15)           //Print Area at start
         {
-            this.radius = 15;    
+            Area = GetArea(radius, radius);             
         }
-        public override void GetArea()
+        public override double GetArea(double radius, double notActiveRadius)       //Area Calculation
         {
             Area = Math.PI * radius * radius;
-            Console.WriteLine("Area: " + Math.Round(Area,1) + " cm3"); 
+            Console.WriteLine("Area as circle: " + Math.Round(Area, 3) + " cm3");
+            return Area;
         }
-        public override void GetPerimeter()
+        public override double GetPerimeter(double radius, double notActiveRadius = 0)      //Perimeter calculation
         {
             Perimeter = 2 * Math.PI * radius;
-            Console.WriteLine("Perimeter: " + Math.Round(Perimeter,2) + " cm3");
+            Console.WriteLine("Perimeter as circle: " + Math.Round(Perimeter,3) + " cm3");
+            return Perimeter;
         }
-        public void GetVolumeSphere() //Calculate volume of sphere
+        public double GetVolumeSphere(double radius)                                    //Calculate volume of sphere
         {
-            Volume = (float)(4.0 / 3 * Math.PI * radius * radius * radius);
-            Console.WriteLine("Volume sphere: " + Math.Round(Volume,1) + " cm3");
+            VolumeSphere = (float)(4.0 / 3 * Math.PI * radius * radius * radius);
+            Console.WriteLine("Volume as sphere: " + Math.Round(VolumeSphere,3) + " cm3");
+            return VolumeSphere;
         }
-        public override void PrintInfo()
+        public override string ToString()                //Could use ToString() for print 
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Circle");
-            GetArea();
-            GetPerimeter();
-            GetVolumeSphere();
-            Console.ResetColor();
+            return "Area as circle: " + Area + "cm3";
         }
     }
 }

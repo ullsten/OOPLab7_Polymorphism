@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Polymophism_test
 {
-    public class Rectangle : Drawing
+    public class Rectangle : Geometry
     {
         protected double Area { get; set; }
         protected double width { get; set; }
@@ -15,36 +16,31 @@ namespace Polymophism_test
         protected double Perimeter { get; set; }
         protected double Volume { get; set; }
 
-        public Rectangle()
+        public Rectangle(double width = 10, double height = 25)
         {
-            this.width = 10;
-            this.height = 25;
-            this.lenght = 5;
+            Area = GetArea(width, height);
         }
-        public override void GetArea()
+        public override double GetArea(double width, double height)         //Area calculation
         {
             Area = width * height;
-            Console.WriteLine("Area: " + Area + " cm2");
+            Console.WriteLine("Area as rectangle: " + Area + " cm2");
+            return Area;
         }
-        public override void GetPerimeter()
+        public override double GetPerimeter(double width, double height)            //Perimeter calculation
         {
             Perimeter = (width + height) * 2;
-            Console.WriteLine("Perimeter: " + Perimeter + " cm");
+            Console.WriteLine("Perimeter as rectangle: " + Perimeter + " cm");
+            return Perimeter;
         }
-        public override void GetVolume()
+        public override double GetVolume(double width, double height, double lenght)            //Volume calculation
         {
             Volume = width * height * lenght;
-            //Console.WriteLine("Volume of rectangle is: " + Volume + " cm3");
-            Console.WriteLine("Volume: " + Volume + " cm3");
+            Console.WriteLine("Volume as rectangle: " + Volume + " cm3");
+            return Volume;
         }
-        public override void PrintInfo()
+        public override string ToString()           //Could use ToString() for print 
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Rectangle");
-            GetArea();
-            GetPerimeter();
-            GetVolume();
-            Console.ResetColor();
+            return "Area as rectangle: " + Area;
         }
     }
 }

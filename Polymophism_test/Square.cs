@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Polymophism_test
 {
     
-    public class Square : Drawing
+    public class Square : Geometry
     {
         protected double Area { get; set; }
         protected double Perimeter { get; set; }
@@ -16,29 +16,25 @@ namespace Polymophism_test
 
         protected int height { get; set; }
 
-        public Square()
+        public Square(double sides = 5, double height = 12)             //Prints area at start
         {
-            this.sides = 5;
-            this.height = 12;
+            Area = GetArea(sides, height); 
         }
-        public override void GetArea()
+        public override double GetArea(double sides, double height)            //Area calculation
         {
             Area = sides * height;
-            Console.WriteLine("Area: " + Area + " cm3");
+            Console.WriteLine("Area as square: " + Area + " cm3");
+            return Area;   
         }
-        public override void GetPerimeter()
+        public override double GetPerimeter(double sides = 5, double notActiveSides = 0)        //Perimeter calculation
         {
             Perimeter = sides * 4;
-            Console.WriteLine("Perimeter: " + Perimeter + " cm");
+            Console.WriteLine("Perimeter as square: " + Perimeter + " cm");
+            return Perimeter;   
         }
-        public override void PrintInfo()
+        public override string ToString()                                                   //Could use ToString() for print
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Square");
-            GetArea();
-            GetPerimeter();
-            Console.ResetColor();
-
+            return "Area as square: " + Area;
         }
     }
 }
