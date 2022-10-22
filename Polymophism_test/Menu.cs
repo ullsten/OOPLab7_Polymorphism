@@ -89,7 +89,7 @@ namespace Polymophism_test
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Clear();
-                Console.WriteLine("Select calculation");
+                Console.WriteLine("Select circle calculation");
                 Console.WriteLine();
                 Console.WriteLine("|#1|Area\n|#2|Perimeter\n|#3|Volume as Sphere\n|#4|New shape\n|#5|Exit");
                 bool calcAnswer = true;
@@ -203,7 +203,7 @@ namespace Polymophism_test
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Clear();
-                Console.WriteLine("Select calculation");
+                Console.WriteLine("Select rectangle calculation");
                 Console.WriteLine();
                 Console.WriteLine("|#1|Area\n|#2|Perimeter\n|#3|Volume\n|#4|New shape\n|#5|Exit");
                
@@ -325,7 +325,7 @@ namespace Polymophism_test
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Clear();
-                Console.WriteLine("Select calculation");
+                Console.WriteLine("Select square calculation");
                 Console.WriteLine();
                 Console.WriteLine("|#1|Area\n|#2|Perimeter\n|#3|New shape\n|#4|Exit");
 
@@ -405,7 +405,7 @@ namespace Polymophism_test
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Clear();
-                Console.WriteLine("Select calculation");
+                Console.WriteLine("Select parallelogram calculation");
                 Console.WriteLine();
                 Console.WriteLine("|#1|Area\n|#2|Perimeter\n|#3|New shape\n|#4|Exit");
 
@@ -489,7 +489,7 @@ namespace Polymophism_test
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Clear();
-                Console.WriteLine("Select calculation");
+                Console.WriteLine("Select ellipse calculation");
                 Console.WriteLine();
                 Console.WriteLine("|#1|Area\n|#2|Perimeter\n|#3|New shape\n|#4|Exit");
 
@@ -532,15 +532,16 @@ namespace Polymophism_test
                             {
                                 Console.Clear();
                                 Console.WriteLine("| PERIMETER of ELLIPSE |");
+                                Console.WriteLine("Calculation with the Ramanujan I approximation");
                                 Console.WriteLine();
-                                Console.Write("Enter radius 1: ");
+                                Console.Write("Enter semi-major axis A: ");
                                 radiusAPerimeter = double.TryParse(Console.ReadLine(), out MajorRadiusA);
                             } while (!radiusAPerimeter);
 
                             bool radiusBPerimeter = true;
                             do
                             {
-                                Console.Write("Enter radius 2: ");
+                                Console.Write("Enter semi-major axis B: ");
                                 radiusBPerimeter = double.TryParse(Console.ReadLine(), out MinorRadiusB);
                             } while (!radiusBPerimeter);
                             Console.WriteLine();

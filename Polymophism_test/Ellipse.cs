@@ -25,8 +25,8 @@ namespace Polymophism_test
         }
         public override double GetPerimeter(double MajorRadiusA, double MinorRadiusB)
         {
-            Perimeter = Math.PI * (3 * (MajorRadiusA + MinorRadiusB) + Math.Sqrt((3 * MajorRadiusA + MinorRadiusB) * (MajorRadiusA + MinorRadiusB * 3)));
-            Console.WriteLine("Perimeter as ellipse: " + Perimeter + "cm2");
+            Perimeter = Math.PI * (3 * (MajorRadiusA + MinorRadiusB) - Math.Sqrt((3 * MajorRadiusA + MinorRadiusB) * (MajorRadiusA + MinorRadiusB * 3)));
+            Console.WriteLine("Perimeter as ellipse: " + Math.Round(Perimeter, 2) + " cm2");
             return Perimeter;
         }
         public override string ToString()                //Could use ToString() for print 
