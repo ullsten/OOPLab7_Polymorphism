@@ -20,19 +20,19 @@ namespace Polymophism_test
         public override double GetArea(double radius, double notActiveRadius)       //Area Calculation
         {
             Area = Math.PI * radius * radius;
-            Console.WriteLine("Area as circle: " + Math.Round(Area, 3) + " cm3");
+            Console.WriteLine("Area as circle: " + Math.Round(Area, 2) + " cm3");
             return Area;
         }
         public override double GetPerimeter(double radius, double notActiveRadius = 0)      //Perimeter calculation
         {
             Perimeter = 2 * Math.PI * radius;
-            Console.WriteLine("Perimeter as circle: " + Math.Round(Perimeter,3) + " cm3");
+            Console.WriteLine("Perimeter as circle: " + Math.Round(Perimeter,2) + " cm3");
             return Perimeter;
         }
         public double GetVolumeSphere(double radius)                                    //Calculate volume of sphere
         {
             VolumeSphere = (float)(4.0 / 3 * Math.PI * radius * radius * radius);
-            Console.WriteLine("Volume as sphere: " + Math.Round(VolumeSphere,3) + " cm3");
+            Console.WriteLine("Volume as sphere: " + Math.Round(VolumeSphere,2) + " cm3");
             return VolumeSphere;
         }
         public override string ToString()                //Could use ToString() for print 

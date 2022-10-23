@@ -20,7 +20,7 @@ namespace Polymophism_test
         public override double GetArea( double MajorRadiusA = 10, double MinorRadiusB = 36)
         {
             Area = Math.PI * MajorRadiusA * MinorRadiusB;
-            Console.WriteLine("Area as ellipse: " + Math.Round(Area, 3) + " m2");
+            Console.WriteLine("Area as ellipse: " + Math.Round(Area, 2) + " m2");
             return Area;
         }
         public override double GetPerimeter(double MajorRadiusA, double MinorRadiusB)
